@@ -1,0 +1,227 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Título da Sua API",
+        "description": "Descrição da sua API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/hello": {
+            "get": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Retorna 'Hello World'",
+                "operationId": "7dc5d2524c671257eb34a2447eab8e9f",
+                "responses": {
+                    "200": {
+                        "description": "Uma mensagem de saudação"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/hello/store": {
+            "post": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Salva algo teste swagger",
+                "operationId": "498cdd52d108fc49c9c8bc43d6f84118",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "data": {
+                                        "type": "string",
+                                        "example": "Salva algo teste swagger"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Uma mensagem de confirmação"
+                    },
+                    "400": {
+                        "description": "Requisição inválida"
+                    },
+                    "403": {
+                        "description": "Acesso negado"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/hello/create": {
+            "get": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Exibe o formulário para criar um novo recurso",
+                "operationId": "424d5d11ab45465ce9b8e95222a0f44d",
+                "responses": {
+                    "200": {
+                        "description": "Retorna o formulário para criação"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/hello/{id}": {
+            "get": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Exibe um recurso especificado",
+                "operationId": "7826c14ac4e29b10032376fe92bfdbbd",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna os detalhes do recurso especificado"
+                    },
+                    "404": {
+                        "description": "Recurso não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Atualiza um recurso especificado",
+                "operationId": "1194499c014eacce3780eddfd492b27c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "data": {
+                                        "type": "string",
+                                        "example": "Atualiza dados do recurso"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Recurso atualizado com sucesso"
+                    },
+                    "400": {
+                        "description": "Requisição inválida"
+                    },
+                    "403": {
+                        "description": "Acesso negado"
+                    },
+                    "404": {
+                        "description": "Recurso não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Remove um recurso especificado",
+                "operationId": "7ba8e10a52d18f7433c581c5b94c846a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Recurso removido com sucesso"
+                    },
+                    "404": {
+                        "description": "Recurso não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/hello/{id}/edit": {
+            "get": {
+                "tags": [
+                    "Hello"
+                ],
+                "summary": "Exibe o formulário para editar um recurso especificado",
+                "operationId": "c7afb4cb363abfd8f31187c21a2ca1cc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna o formulário de edição do recurso especificado"
+                    },
+                    "404": {
+                        "description": "Recurso não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Hello",
+            "description": "Hello"
+        }
+    ]
+}
